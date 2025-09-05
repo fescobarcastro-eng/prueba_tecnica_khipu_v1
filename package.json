@@ -1,0 +1,18 @@
+{
+  "name": "khipu-demo",
+  "private": true,
+  "workspaces": ["backend", "frontend"],
+  "scripts": {
+    "dev:backend": "npm run dev -w backend",
+    "dev:frontend": "npm run dev -w frontend",
+    "dev": "concurrently -n backend,frontend -c blue,green \"npm:dev:backend\" \"npm:dev:frontend\"",
+    "build": "npm run build -w backend && npm run build -w frontend",
+    "start:backend": "npm run start -w backend",
+    "preview:frontend": "npm run preview -w frontend",
+    "start": "concurrently -n backend,frontend -c blue,green \"npm:start:backend\" \"npm:preview:frontend\"",
+    "lint": "npm run lint -w frontend || true"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0"
+  }
+}

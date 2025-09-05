@@ -1,0 +1,28 @@
+/* Habilita Tailwind CSS */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Resetes mínimos; dejamos que Tailwind maneje tipografía y colores */
+:root {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: #f8fafc; /* bg-gray-50 */
+  color: #0f172a; /* slate-900 */
+}
+
+/* Quita estilos de botón por defecto para usar utilidades Tailwind */
+button {
+  background: unset;
+  border: unset;
+  padding: unset;
+}
